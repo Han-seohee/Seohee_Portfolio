@@ -1,0 +1,25 @@
+/* #D6B3A6
+#735E53
+#554D4B
+#718F8E
+#9CB8BC
+#DCE9EA */
+
+.MainBackground {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.TitleBar {
+    color: #ffffff;
+    background-color: #f79f73;
+}
+
+.NavButton {
+    background-color: #f79f73;
+}
+
+.NaviTitle {
+    color: #ffffff;
+    background-color: #e67452 !important;
+}
