@@ -20,7 +20,7 @@ module.exports = function(app) {
         })
     );
     app.use(
-        proxy.createProxyMiddleware('/Covud', {
+        proxy.createProxyMiddleware('/Covid', {
             target: 'http://openapi.data.go.kr/',
             changeOrigin: true,
             pathRewrite: {
