@@ -1,10 +1,14 @@
 import '../../App.css';
+import '../../Style/Parking.css';
 import axios from "axios";
 import { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ParkinglotTable from './ParkingTable';
 import ParkinglotButton from './ParkingButton';
+import ParkingChart from './ParkingChart';
+
+import randomColor from 'randomcolor';
 
 class Parking extends Component {
     constructor(props) {
@@ -56,7 +60,7 @@ class Parking extends Component {
         })
         .then((res) => {
         let response_data = res.data.response.body.items.item; 
-
+        
         //조건문
         if(Array.isArray(response_data)) {
             this.setState({
@@ -75,11 +79,45 @@ class Parking extends Component {
 
     render() {
         // return <div className="App">{}</div>;
+        let names = [];
+        let datas = [];
+        if (this.state.data) {
+            names = this.state.data.map((row) => {
+                return `${row.aprkor}_${row.parkingAirportCodeName}_exist`
+            });
+            datas = this.state.data.map((row) => {
+                return row.parkingFullSpace
+            });
+        }
+
+        let colors = datas.map(() => {
+            return randomColor();
+        });
+
         return(
-        <div className="App">
-            <ParkinglotButton Test={this.Test} airport_list={this.state.airport_list}/>
-            <ParkinglotTable parkingData={this.state.data}/>
-        </div>
+            <>
+                <div className="App">
+                    <div className="DashBoard">
+                        {names.length >0 ?
+                            <ParkingChart name={names} data={datas} color={colors} />
+                            : <>what</>
+                        }
+                    </div>
+                    <div className="Wrapper_p">
+                        <div className="ButtonBox">
+                        <ParkinglotButton Test={this.Test} airport_list={this.state.airport_list}/>
+                        </div>
+                        {
+                            this.state.data ?
+                            <div className="TableBox">
+                                <ParkinglotTable parkingData={this.state.data}/>
+                            </div>
+                            :
+                            <><b>데이터가 존재하지 않습니다.</b></>
+                        }
+                    </div>
+                </div>
+            </>
         )
     }
 }

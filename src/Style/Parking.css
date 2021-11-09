@@ -1,0 +1,22 @@
+.Wrapper_p {
+    width: 70%;
+    float: right;
+    box-sizing: border-box;
+}
+.DashBoard {
+    width: 30%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.ButtonBox {
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.TableBox {
+    padding: 10px;
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+}

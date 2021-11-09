@@ -20,7 +20,7 @@ class ParkingTable extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.props.parkingData.map((row, index) => {
+                    {this.props.parkingData ? this.props.parkingData.map((row, index) => {
                         return(
                         <tr key={index}>
                             <td>{row.aprKor}</td>
@@ -34,9 +34,18 @@ class ParkingTable extends Component {
                             <td>{row.parkingGettime}</td>
                         </tr>
                         )
-                        
-                        
-                    })}
+                    }) : 
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>}
                     
                 </tbody>
             </Table>

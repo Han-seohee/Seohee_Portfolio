@@ -19,4 +19,13 @@ module.exports = function(app) {
             }
         })
     );
+    app.use(
+        proxy.createProxyMiddleware('/Covud', {
+            target: 'http://openapi.data.go.kr/',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/Covid': '' // URL ^/api -> 공백 변경
+            }
+        })
+    );
 }

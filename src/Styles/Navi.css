@@ -23,16 +23,17 @@
     color: white;
 }
 .introduce > div > h3 {
-    margin-top: 10px;
+    margin-top: 25px;
     margin-left: 10px;
     font-size: 30px;
     font-weight: bolder;
 }
-.introduce > div > h5 {
-    /* margin-top: -10px; */
-    margin-left: 10px;
+.introduce > div p {
+    margin-top: 10px;
+    /* margin-left: 10px; */
     margin-bottom: 30px;
-    font-weight: bolder;
+    font-weight: lighter;
+    font-size: 20px;
 }
 .navItemBox {
     color: black !important;

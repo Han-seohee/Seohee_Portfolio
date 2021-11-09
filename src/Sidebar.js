@@ -44,7 +44,7 @@ function SideBar() {
             </Offcanvas.Header>
             <Container className="Explain-Font NaviTitle introduce">
                 <div>
-                    <h3>한서희<h5>의 포트폴리오 페이지 입니다</h5></h3>
+                    <h3>한서희<p>의 포트폴리오 페이지 입니다!</p></h3>
                 </div>
             </Container>
             <Offcanvas.Body>
@@ -53,6 +53,7 @@ function SideBar() {
                     <div className="line"/>
                     <Nav.Link className="navItemBox" href='/Parking'>Parking</Nav.Link>
                     <Nav.Link className="navItemBox" href='/Weather'>Weather</Nav.Link>
+                    <Nav.Link className="navItemBox" href='/Covid'>Covid</Nav.Link>
                 </Nav>
             </Offcanvas.Body>
         </Navbar.Offcanvas>

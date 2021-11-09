@@ -10,8 +10,8 @@ function Weather() {
     const [display, setDisplay] = useState(false);
 
     useEffect(() => {
-        // setCount(count + 1);
-    });
+        call_Api();
+    }, []);
 
     function call_Api() {
         axios
@@ -25,7 +25,6 @@ function Weather() {
         }
         })
         .then((response) => {
-            console.log(response);
             setData(response.data);
             setDisplay(true);
         })
@@ -37,10 +36,10 @@ function Weather() {
 
     return(
         <>
-        <p>
+        {/* <p>
             안녕하세요? 날씨를 볼 수 있는 페이지입니다.
-        </p>
-            <button onClick={call_Api}>날씨</button>
+        </p> */}
+            {/* <button onClick={call_Api}>날씨</button> */}
             {display ?
                 <div>
                     <WeatherView data={data}/>
@@ -51,4 +50,5 @@ function Weather() {
     )
 }
 
-export default Weather();
+// 별표 5조5억개
+export default Weather;
