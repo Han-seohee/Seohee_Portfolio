@@ -14,7 +14,7 @@ function Covid() {
 
     function call_Api() {
         axios.
-        get("covid/openapi/service/rest/Covid19", {
+        get("covid/getCovid19SidoInfStateJson", {
             params : {
                 "ServiceKey" : key,
                 "pageNo" : 1,

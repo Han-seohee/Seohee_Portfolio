@@ -20,11 +20,11 @@ module.exports = function(app) {
         })
     );
     app.use(
-        proxy.createProxyMiddleware('/Covid', {
-            target: 'http://openapi.data.go.kr/',
+        proxy.createProxyMiddleware('/covid', {
+            target: 'http://openapi.data.go.kr/openapi/service/rest/Covid19',
             changeOrigin: true,
             pathRewrite: {
-                '^/Covid': '' // URL ^/api -> 공백 변경
+                '^/covid': '' // URL ^/api -> 공백 변경
             }
         })
     );

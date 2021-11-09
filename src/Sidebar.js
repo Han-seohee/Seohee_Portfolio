@@ -53,7 +53,7 @@ function SideBar() {
                     <div className="line"/>
                     <Nav.Link className="navItemBox" href='/Parking'>Parking</Nav.Link>
                     <Nav.Link className="navItemBox" href='/Weather'>Weather</Nav.Link>
-                    <Nav.Link className="navItemBox" href='/Covid'>Covid</Nav.Link>
+                    <Nav.Link className="navItemBox" href='/Cvd'>Covid</Nav.Link>
                 </Nav>
             </Offcanvas.Body>
         </Navbar.Offcanvas>

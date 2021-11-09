@@ -25,7 +25,7 @@ function App() {
             component={Parking}/>
           <Route exact path='/Weather' 
             component={Weather}/>
-          <Route exact path='/Covid' 
+          <Route exact path='/Cvd' 
             component={Covid}/>
         </div>
       </div>
