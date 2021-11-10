@@ -21,7 +21,7 @@ module.exports = function(app) {
     );
     app.use(
         proxy.createProxyMiddleware('/covid', {
-            target: 'http://openapi.data.go.kr/openapi/service/rest/Covid19',
+            target: 'http://openapi.data.go.kr/openapi/service/rest/Covid19/',
             changeOrigin: true,
             pathRewrite: {
                 '^/covid': '' // URL ^/api -> 공백 변경

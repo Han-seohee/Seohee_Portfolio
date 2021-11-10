@@ -4,7 +4,7 @@ import React from 'react';
 
 function Covid() {
 
-    const key = 'H%2Bn33W2WWhRLY358pYUSI7utTn5NMjnA5wGhh3fOvjDu3Dr%2BWPllB9jLaLaHWQJXZVnwB1rqCn637HKz1aUrcQ%3D%3D';
+    const key = 'H+n33W2WWhRLY358pYUSI7utTn5NMjnA5wGhh3fOvjDu3Dr+WPllB9jLaLaHWQJXZVnwB1rqCn637HKz1aUrcQ==';
     const [data, setData] = useState([]);
     const [display, setDisplay] = useState(false);
 
@@ -13,8 +13,8 @@ function Covid() {
     }, []);
 
     function call_Api() {
-        axios.
-        get("covid/getCovid19SidoInfStateJson", {
+        axios
+        .get("covid/getCovid19SidoInfStateJson", {
             params : {
                 "ServiceKey" : key,
                 "pageNo" : 1,
@@ -24,6 +24,8 @@ function Covid() {
             }
         })
         .then((response) => {
+            console.log(response);
+            console.log(response.data.response.body.items);
             setData(response.data);
             setDisplay(true);
         })
@@ -35,7 +37,7 @@ function Covid() {
     
     return(
         <>
-        안녕하시오~~~
+        코로나19 차트
         </>
     )
 }
