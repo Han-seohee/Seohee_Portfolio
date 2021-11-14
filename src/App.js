@@ -19,6 +19,8 @@ function App() {
         {/* 사이드바가 있는 자리 */}
         <Sidebar />
         <div className="routeWrap">
+          <Route exact path='/' 
+            component={ Main }/>
           <Route exact path='/Home' 
             component={ Main }/>
           <Route exact path='/Parking'

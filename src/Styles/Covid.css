@@ -1,0 +1,17 @@
+.btnBox {
+    width: 80vw;
+    height: 20vh;
+    margin: auto;
+    padding: 0;
+    overflow: auto;
+}
+
+.btn {
+    margin: 5px !important;
+}
+
+.chartBox {
+    width: 50vw;
+    padding: 0;
+    margin: auto;
+}

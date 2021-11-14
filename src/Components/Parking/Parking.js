@@ -1,5 +1,5 @@
 import '../../App.css';
-import '../../Style/Parking.css';
+import '../../Styles/Parking.css';
 import axios from "axios";
 import { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,7 +13,7 @@ import randomColor from 'randomcolor';
 class Parking extends Component {
     constructor(props) {
         super(props);
-        this.state = { //초기값 설정
+        this.state = { 
         data: [],
         airport_list: [
             { idx:"", name:"전체"},
