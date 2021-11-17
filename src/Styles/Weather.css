@@ -1,0 +1,12 @@
+table {
+    font-family: 'Aggro-Light';
+}
+.table > tbody {
+    text-align: center;
+    /* line-height: 50px; */
+}
+h2 {
+    font-family: 'Aggro-Midium';
+    text-align: center;
+    padding: 20px;
+}

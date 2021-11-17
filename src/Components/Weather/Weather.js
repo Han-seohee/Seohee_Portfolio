@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import WeatherView from './WeatherView';
+import '../../Styles/Weather.css';
 
 function Weather() {
     const key = '1b387889fa14212d8905f74ee68f22fa';
@@ -36,9 +37,9 @@ function Weather() {
 
     return(
         <>
-        {/* <p>
-            안녕하세요? 날씨를 볼 수 있는 페이지입니다.
-        </p> */}
+        <h2>
+        ⛅How is the weather right now❔
+        </h2>
             {/* <button onClick={call_Api}>날씨</button> */}
             {display ?
                 <div>

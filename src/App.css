@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'Aggro-Bold';
+  src: url('./Fonts/SB\ 어그로\ B.ttf');
+}
+@font-face {
+  font-family: 'Aggro-Midium';
+  src: url('./Fonts/SB\ 어그로\ M.ttf');
+}
+@font-face {
+  font-family: 'Aggro-Light';
+  src: url('./Fonts/SB\ 어그로\ L.ttf');
+}

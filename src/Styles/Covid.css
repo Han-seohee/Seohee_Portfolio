@@ -1,15 +1,32 @@
 .btnBox {
     width: 80vw;
-    height: 20vh;
+    height: 10vh;
     margin: auto;
     padding: 0;
     overflow: auto;
+    text-align: center;
 }
 
 .btn {
     margin: 5px !important;
+    background: coral;
+    border: none;
+    box-shadow: 2px 2px 2px gray;
+    font-family: "Aggro-Light";
+    padding-top: 10px;
 }
-
+.btn:hover {
+    background: orange !important;    
+}
+.btn:active {
+    background: orange !important;    
+}
+.btn:focus {
+    background: orange !important;
+}
+.btn:visited {
+    background: orange !important;
+}
 .chartBox {
     width: 50vw;
     padding: 0;

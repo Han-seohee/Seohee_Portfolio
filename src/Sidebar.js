@@ -11,27 +11,21 @@ import {
     Navbar,
     Offcanvas
 } from 'react-bootstrap';
-import {
-    RiBarChartHorizontalFill
-} from 'react-icons';
 
 function SideBar() {
     return(
     <Navbar className='navTitleContainer TitleBar' expand={false}>
-        <Container>
-            <Row className="justify-content-md-center">
-                <Col>
-                    <Navbar.Toggle className="NavButton" aria-controls="offcanvasNavbar" />
-                </Col>
-                <Col xs={8}>
-                    <Navbar.Brand className="navTitle Title-Font" href='/'>
+        <Navbar.Toggle className="NavButton" aria-controls="offcanvasNavbar" />
+        <Container className='naviContainer'>
+            <Row>
+                <Col xs={12} className='titleName'>
+                <Navbar.Brand className="navTitle Title-Font" href='/'>
                         <b><h1>Seohee's React Project</h1></b>
-                    </Navbar.Brand>
+                </Navbar.Brand>
                 </Col>
                 <Col></Col>
             </Row>
         </Container>
-
         <Navbar.Offcanvas
             id="offcanvaNavbar"
             aria-labelledby="offcanvasNavBarLabel"

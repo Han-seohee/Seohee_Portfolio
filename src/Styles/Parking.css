@@ -8,15 +8,18 @@
     float: left;
     box-sizing: border-box;
 }
-
 .ButtonBox {
     overflow: auto;
     box-sizing: border-box;
 }
-
 .TableBox {
     padding: 10px;
     height: 100%;
     overflow: auto;
     box-sizing: border-box;
+}
+.BtnBox > .btn {
+    background: coral !important;
+    border: none;
+    box-shadow: 2px 2px 2px gray;
 }

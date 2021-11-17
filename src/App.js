@@ -1,15 +1,18 @@
 import './App.css';
 
+// Router Import
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
 
+// Import to Page
 import Main from './Components/Main/Main';
 import Parking from './Components/Parking/Parking';
 import Weather from './Components/Weather/Weather';
 import Covid from './Components/Covid/Covid';
 
+// Sidebar Navi UI Import
 import Sidebar from './Sidebar';
 
 function App() {

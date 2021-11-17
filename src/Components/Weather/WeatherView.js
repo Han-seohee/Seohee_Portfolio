@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import { icons } from 'react-icons';
+import '../../Styles/Weather.css';
 
 function WeatherView(props) {
     const weather_name = props.data.name;
@@ -29,7 +30,7 @@ function WeatherView(props) {
     return (
         <>
             <Table striped bordered hover size="lg">
-                <thead>
+                <tbody>
                     <tr>
                         <td>도시이름</td>
                         <td>{weather_name}</td>{/*??*/}
@@ -64,7 +65,7 @@ function WeatherView(props) {
                         <td>풍속</td>
                         <td>{wind_speed} m/s</td>
                     </tr>
-                </thead>
+                </tbody>
             </Table>
         </>
     )

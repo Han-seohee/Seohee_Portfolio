@@ -13,10 +13,10 @@ function BarChart(props) {
     const option = {
         // false로 설정시 사용자 정의 크기에 따라 그래프 크기 결정
         maintainAspectRatio: true,
-        // responsive: true,
+        responsive: true,
         plugins: {
             title: {
-                text: "코로나 현황",
+                text: "코로나 현황(" + props.title + ")",
                 display: true
             },
             legend: {

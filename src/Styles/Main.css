@@ -1,0 +1,46 @@
+.profileContainer {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+img {
+    width: 300px;
+    height: 345px;
+    
+}
+.profile {
+    font-family: 'Aggro-Bold';
+    font-size: 24px;
+    /* background: yellowgreen; */
+}
+.profile p {
+    font-family: 'Aggro-Light';
+    font-size: 18px;
+}
+.profile p  a {
+    font-family: 'Aggro-Bold';
+    color: green;
+    text-decoration: none;
+}
+.profile p  a:hover {
+    color: yellowgreen;
+}
+
+.projectContainer {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    /* background: pink; */
+}
+.projectContainer h2 {
+    font-family: 'Aggro-Bold';
+}
+.projectContainer p{
+    font-family: 'Aggro-Light';
+}
+.projectContainer .mainMockup {
+    width: 75%;
+    margin: 10px 0;
+}
