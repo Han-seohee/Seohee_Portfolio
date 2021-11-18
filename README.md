@@ -67,3 +67,10 @@ npm install moment
 import moment from 'moment';
 ```
 
+<br/>
+## 🗂️Components
+
+- Parking 👉🏻 class component 
+- Weather, Covid 👉🏻 function component
+
+> async & await을 이용한 비동기처리
