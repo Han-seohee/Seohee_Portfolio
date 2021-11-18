@@ -4,8 +4,8 @@ import axios from "axios";
 import { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import ParkinglotTable from './ParkingTable';
-import ParkinglotButton from './ParkingButton';
+import ParkingTable from './ParkingTable';
+import ParkingButton from './ParkingButton';
 import ParkingChart from './ParkingChart';
 
 import randomColor from 'randomcolor';
@@ -13,8 +13,9 @@ import randomColor from 'randomcolor';
 class Parking extends Component {
     constructor(props) {
         super(props);
+
         this.state = { 
-        data: [],
+        data: [], 
         airport_list: [
             { idx:"", name:"전체"},
             { idx:"GMP", name:"김포"},
@@ -37,86 +38,85 @@ class Parking extends Component {
         this.call(); 
     }
 
-    Test = async (index) => { //async await 비동기처리 , 
+    changeAirport = async (index) => { //async await 비동기처리 , 
         await this.setState({
-        airport_index: index
+            airport_idx: index, 
+            parking: [] 
         });
-        this.call(); 
-        // console.log(this.state.airport_index);
-    }
-        // function Test(index) {
-            
-        // }
-    call = async () => { 
+        this.call(this.state.airport_idx); 
+        }
+        
+    call = async (index) => { 
+        try {
         await axios //API를 호출하기 위한 라이브러리
         //서버에 데이터를 요청
         .get("parking/service/rest/AirportParking/airportparkingRT",{
-        params: {
-            // API 를 사용하기 위해서는 serviceKey와 schAirportCode가 필요한데
-            // state에 미리 저장해두고 가져오는 방식으로 구축함.
-            "serviceKey":this.state.serviceKey,
-            "schAirportCode":this.state.airport_index
-        }
-        })
-        .then((res) => {
-        let response_data = res.data.response.body.items.item; 
-        
-        //조건문
-        if(Array.isArray(response_data)) {
-            this.setState({
-            data: response_data
+            params: {
+                // API 를 사용하기 위해서는 serviceKey와 schAirportCode가 필요한데
+                // state에 미리 저장해두고 가져오는 방식으로 구축함.
+                "serviceKey":this.state.serviceKey,
+                "schAirportCode":index
+            }
+            })
+            .then((res) => {
+            let response_data = res.data.response.body.items.item; 
+            
+            //조건문
+            if(Array.isArray(response_data)) {
+                this.setState({
+                    data: response_data
+                });
+            } else {
+                this.setState({
+                    data: [response_data]
+                });
+            }
+            
+            })
+            .catch((error) => {
+            console.log(error);
             });
-        } else {
-            this.setState({
-            data: [response_data]
-            });
+        } catch(e) {
+            console.log(e);
         }
-        })
-        .catch((error) => {
-        console.log(error);
-        });
-    };
+    }
 
     render() {
-        // return <div className="App">{}</div>;
-        let names = [];
-        let datas = [];
-        if (this.state.data) {
-            names = this.state.data.map((row) => {
-                return `${row.aprkor}_${row.parkingAirportCodeName}_exist`
-            });
-            datas = this.state.data.map((row) => {
-                return row.parkingFullSpace
-            });
-        }
-
-        let colors = datas.map(() => {
-            return randomColor();
-        });
-
         return(
             <>
                 <div className="App">
                     <div className="DashBoard">
-                        {names.length >0 ?
-                            <ParkingChart name={names} data={datas} color={colors} />
-                            : <>what</>
-                        }
-                    </div>
-                    <div className="Wrapper_p">
-                        <div className="ButtonBox">
-                        <ParkinglotButton Test={this.Test} airport_list={this.state.airport_list}/>
-                        </div>
                         {
-                            this.state.data ?
-                            <div className="TableBox">
-                                <ParkinglotTable parkingData={this.state.data}/>
-                            </div>
-                            :
-                            <><b>데이터가 존재하지 않습니다.</b></>
+                            this.state.data ? this.state.data.map((row, index) => {
+                                let title = `${row.aprKor} ${row.parkingAirportCodeName}`;
+                                let name = ['전체 주차면 수', '입고된 차량 수', '출고된 차량 수','현재 주차 차량 수'];
+                                let data = [row.parkingFullSpace, row.parkingIincnt, row.parkingIoutcnt, row.parkingIstay];
+                                let color = [randomColor(), randomColor(), randomColor(), randomColor()];
+                                console.log(row);
+                                return(
+                                    <div key={index} className="ChartBox">
+                                        <ParkingChart title={title} name={name} data={data} color={color}/>
+                                        <hr />
+                                    </div>
+                                )
+                            }):
+                            <div></div>
                         }
+                        </div>
+                        <div className={'Wrapper'}>
+                            <div className={'ButtonBox'}>
+                                <ParkingButton btnData={this.state.airport_list} changeAirport={this.changeAirport}/>
+                            </div>
+                            {
+                                this.state.data ?
+                                <div className={'TableBox'}>
+                                    <ParkingTable parking={this.state.data}/>
+                                </div>
+                                :
+                                <><b>데이터가 존재하지 않습니다.</b></>
+                            }
+                        </div>
                     </div>
-                </div>
             </>
         )
     }

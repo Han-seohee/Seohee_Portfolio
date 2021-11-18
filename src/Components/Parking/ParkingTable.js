@@ -20,7 +20,7 @@ class ParkingTable extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.props.parkingData ? this.props.parkingData.map((row, index) => {
+                    {this.props.parking ? this.props.parking.map((row, index) => {
                         return(
                         <tr key={index}>
                             <td>{row.aprKor}</td>

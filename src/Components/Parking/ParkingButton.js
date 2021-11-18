@@ -6,10 +6,10 @@ class ParkingButton extends Component {
         return (
             <div className="BtnBox">
             {
-                this.props.airport_list ? 
-                this.props.airport_list.map((row, idx) => {
+                this.props.btnData ? 
+                this.props.btnData.map((row, idx) => {
                     return (
-                        <Button onClick={(e) => this.props.Test(row.idx)} className="mb-2"
+                        <Button onClick={(e) => this.props.changeAirport(row.idx)} className="mb-2"
                                 variant="secondary" 
                                 key={idx} 
                                 size="lg" 

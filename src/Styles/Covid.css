@@ -32,3 +32,8 @@
     padding: 0;
     margin: auto;
 }
+.moment {
+    font-family: 'Aggro-Light';
+    display: block;
+    text-align: center;
+}

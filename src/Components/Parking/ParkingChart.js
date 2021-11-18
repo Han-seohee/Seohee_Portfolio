@@ -2,60 +2,54 @@ import { React, Component } from 'react';
 import { Pie } from "react-chartjs-2";
 
 class ParkingChart extends Component {
-    renderChart = (names, datas, colors) => {
+    constructor(props) {
+        super(props);
+        console.log(this.props.title);
+        this.state = {
+            title: this.props.title,
+            name: this.props.name,
+            data: this.props.data,
+            color: this.props.color,
+        }
+    }
+    renderChart = (name, data, color) => {
         return {
-            labels: names,
+            labels: name,
             datasets: [{
-                data: datas,
-                backgroundColor: colors,
-                borderColor: colors,
+                data: data,
+                backgroundColor: color,
+                borderColor: ['black'],
             }]
         }
     }
     
     render() {
-        const { name, data, color } = this.props;
-
         return(
-            <div>
-                {
-                    name.length > 0 ?
-                    <>
-                        <Pie
-                            data={this.renderChart(name, data, color)}
-                            options={{
-                                responsive: true,
-                                title: {
-                                    display: false,
-                                },
-                                plugins: {
-                                    title: {
-                                        text: "현재 주차된 차량",
-                                        display: true
-                                        },
-                                    legend: {
-                                        position: "bottom",
-                                        display: false, //label숨기기
+            <>
+            {
+                this.state.title && this.state.name && this.state.data ?
+                <Pie
+                    data = {this.renderChart(this.state.name, this.state.data, this.state.color)}
+                    options={{
+                        plugins : {
+                            title: {
+                                text: this.props.title,
+                                font: {
+                                        family: 'Aggro-Light'
                                     },
+                                    display: true
                                 },
-                                // false로 설정 시 사용자 정의 크기에 따라 그래프 크기가 결정됨
-                                maintainAspectRatio: false,
-                                scales: {
-                                    alignToPixels: true
-                                },
-                                animation: {
-                                    animateScale: true
+                                legend: {
+                                    display: false,
                                 }
-                            }}
+                            }
+                        }}
                         />
-                    </>
                     :
-                    <></>
+                    <div></div>
                 }
-            </div>
+            </>
         )
     }
 }
-
 export default ParkingChart;
-

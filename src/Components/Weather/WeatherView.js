@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Table } from 'react-bootstrap';
-import { icons } from 'react-icons';
 import '../../Styles/Weather.css';
 
 function WeatherView(props) {
@@ -14,7 +13,7 @@ function WeatherView(props) {
     const weather_humidity = props.data.main.humidity;
     const wind_speed = props.data.wind.speed;
 
-    // 여기에서 props를 console로 출력하면서 하나하나 더 보십쇼~
+    // 여기에서 props를 console로 출력
     console.log(props);
     console.log(props.data);
     console.log(props.data.weather);

@@ -37,10 +37,9 @@ function Weather() {
 
     return(
         <>
-        <h2>
+        <h2 className={'weatherTitle'}>
         ⛅How is the weather right now❔
         </h2>
-            {/* <button onClick={call_Api}>날씨</button> */}
             {display ?
                 <div>
                     <WeatherView data={data}/>
@@ -51,5 +50,4 @@ function Weather() {
     )
 }
 
-// 별표 5조5억개
 export default Weather;

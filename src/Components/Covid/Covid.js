@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap'
 import axios from 'axios';
 import randomColor from 'randomcolor';
+import moment from 'moment';
 
 import BarChart from './CovidChart';
 
@@ -11,10 +12,12 @@ const Covid = () => {
 
     let key = 'H+n33W2WWhRLY358pYUSI7utTn5NMjnA5wGhh3fOvjDu3Dr+WPllB9jLaLaHWQJXZVnwB1rqCn637HKz1aUrcQ==';
     
+    const [title, setTitle] = useState('신규 확진자');
     const[filter, setFilter] = useState('incDec');
-    const [title, setTitle] = useState('');
 
-    const [group, setGroup] = useState([]); // 차트.js에서 필요한 라벨값(데이터랑 배열의 위치가 같아야함. 그룹이 여러개면 데이터도 여러개 순서,위치 동일하게 작성)
+    const [BaseData, setBaseData] = useState('');
+    const [group, setGroup] = useState([]); 
+    // 👆🏻차트.js에서 필요한 라벨값(데이터랑 배열의 위치가 같아야함. 그룹이 여러개면 데이터도 여러개 순서,위치 동일하게 작성)
     const [data, setData] = useState([]);  
     const [color, setColor] = useState([]); // 색상입히기
 
@@ -57,7 +60,9 @@ const Covid = () => {
             
             response = response.data.response.body.items.item; //보고자 하는 데이터를 끌어올림
         
-            if(response.length > 0) {
+            if(response.length > 0) {   
+                setBaseData(moment(response[0].createDt).format('YYYY.MM.DD H:mm A').toString());
+
                 setGroup(response.map((row) => {
                     return row.gubun
                 }));
@@ -145,6 +150,7 @@ const Covid = () => {
                 </Button>
             </div>
             <div className="chartBox">
+                <span className={'moment'}>업데이트 기준 일시 : {BaseData} </span>
                 {
                     group.length > 0 && data.length > 0 && color.length > 0 ?
                     <BarChart title={title} label={group} data={data} color={color}/>

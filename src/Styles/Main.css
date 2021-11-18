@@ -1,13 +1,13 @@
 .profileContainer {
-    width: 50%;
+    width: 55%;
     margin: 0 auto;
     padding: 20px;
     display: flex;
     justify-content: space-between;
 }
-img {
-    width: 300px;
-    height: 345px;
+.me {
+    width: 320px;
+    height: 368px;
     
 }
 .profile {
@@ -28,19 +28,51 @@ img {
     color: yellowgreen;
 }
 
-.projectContainer {
-    width: 50%;
+.projectContainer, 
+.webPageContainer ,
+.introduceContainer {
+    width: 55%;
     margin: 0 auto;
     padding: 20px;
     /* background: pink; */
-}
-.projectContainer h2 {
     font-family: 'Aggro-Bold';
 }
-.projectContainer p{
+.projectContainer p,
+.webPageContainer p
+{
     font-family: 'Aggro-Light';
 }
-.projectContainer .mainMockup {
-    width: 75%;
-    margin: 10px 0;
+.projectContainer p a,
+.webPageContainer p a {
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    padding: 3px 0;
+}
+.pjtitle {
+    color: rgb(88, 86, 86);
+    font-family: 'Aggro-Light';
+    font-weight: 600;
+}
+.Mockup {
+    width: 80%;
+    padding: 10px 0;
+}
+.introduceContainer > h2 {
+    font-family: 'Aggro-Bold';
+}
+.introduceContainer {
+    font-family: 'Aggro-Light';
+}
+.introtitle {
+    font-size: 22px;
+    padding: 15px 0;
+}
+.intro {
+    /* padding: 25px 0; */
+    padding-bottom: 25px;
+    border-bottom: 2px dashed gray;
+}
+.intro:last-child {
+    border-bottom: none;
 }

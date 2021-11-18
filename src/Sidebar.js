@@ -14,7 +14,7 @@ import {
 
 function SideBar() {
     return(
-    <Navbar className='navTitleContainer TitleBar' expand={false}>
+    <Navbar className='navTitleContainer TitleBar fixed-top' expand={false}>
         <Navbar.Toggle className="NavButton" aria-controls="offcanvasNavbar" />
         <Container className='naviContainer'>
             <Row>
