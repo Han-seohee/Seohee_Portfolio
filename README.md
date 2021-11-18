@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# 💁🏻‍♀️Seohee's Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://user-images.githubusercontent.com/86407453/142332319-ad9952c3-69e2-4526-a5a5-2dc6eb598c6e.jpg"/>
 
-## Available Scripts
+> React로 작성한 포트폴리오 페이지 입니다. 공항 주차장 정보, 현재 날씨, COVID19-Chart를 실시간으로 확인할 수 있습니다.
 
-In the project directory, you can run:
+<br />
 
-### `npm start`
+## ⚙️Install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* **Axios** <br/>
+api를 호출하기 위한 라이브러리
+```
+npm install axios
+```
+```js
+import axios from "axios"; 
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* **BootStrap** <br/>
+빠르고 간편한 웹 디자인을 위한 프레임워크 <br/>
+install후 CDN을 import한다.
 
-### `npm test`
+```
+npm install react-bootstrap bootstrap
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```js
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
 
-### `npm run build`
+* **Chart.js** <br/>
+차트를 그리는 툴 <br/>
+필요한 타입의 차트를 import
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm install chart.js
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```js
+import { Pie } from "react-chartjs-2";
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+import { Bar } from 'react-chartjs-2';
+```
 
-### `npm run eject`
+* **random Color** <br/>
+임의의 색상을 생성하기 위한 스크립트
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm install randomcolor
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+import randomColor from 'randomcolor';
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* **Moment.js** <br/>
+시간이 포함된 데이터를 받아 조작해야 할 경우 사용하는 라이브러리
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm install moment
+```
 
-## Learn More
+```js
+import moment from 'moment';
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br/>
+## 🗂️Components
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Parking 👉🏻 class component 
+- Weather, Covid 👉🏻 function component
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> async & await을 이용한 비동기처리
