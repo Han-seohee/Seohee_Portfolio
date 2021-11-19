@@ -105,3 +105,7 @@ import moment from 'moment';
 map반복문을 돌려 ParkingChart를 출력한다.
 data변수에 데이터가 없다면 비어있는 div만 출력된다.
 
+> Button
+
+<img src="https://user-images.githubusercontent.com/86407453/142587389-4bed3853-2746-4993-accc-f492bb28912e.png"/>
+* onClick 이벤트를 이용해 parking에서 changeAirport함수를 받아와 버튼을 만들었다.
