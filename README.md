@@ -75,3 +75,22 @@ import moment from 'moment';
 - Weather, Covid 👉🏻 function component
 
 > async & await을 이용한 비동기처리
+
+<img src="https://user-images.githubusercontent.com/86407453/142582680-f4468340-3e59-4a2f-a6f1-e3ca713ad0df.png"/>
+
+<br/>
+
+> 배열이 아닌 데이터 또한 호출하기 위한 조건문
+
+<img src="https://user-images.githubusercontent.com/86407453/142582769-06dd91fc-dfda-4f77-94be-9ddf4697cfb3.png"/>
+
+<br/>
+
+>try-catch문
+
+<img src="https://user-images.githubusercontent.com/86407453/142583280-545f8cb0-406c-4622-be32-06d03de4c862.png"/>
+<img src="https://user-images.githubusercontent.com/86407453/142583300-5dc10a61-f5f6-4a50-aeaa-c216d986eedd.png"/>
+
+ try 👉🏻 실행할 코드 <br />
+
+ catch 👉🏻 예외 발생시 응답 지정 
