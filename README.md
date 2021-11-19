@@ -94,3 +94,14 @@ import moment from 'moment';
  try 👉🏻 실행할 코드 <br />
 
  catch 👉🏻 예외 발생시 응답 지정 
+ 
+ <br/>
+ 
+> 삼항연산자와 반복문
+
+ <img src="https://user-images.githubusercontent.com/86407453/142585025-04c9a048-1e8a-4f8e-8251-34acf8aeb11b.png"/> 
+ 
+* data변수에 데이터가 있으면
+map반복문을 돌려 ParkingChart를 출력한다.
+data변수에 데이터가 없다면 비어있는 div만 출력된다.
+
