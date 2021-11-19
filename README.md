@@ -82,6 +82,9 @@ import moment from 'moment';
 
 <img src="https://user-images.githubusercontent.com/86407453/142582680-f4468340-3e59-4a2f-a6f1-e3ca713ad0df.png"/>
 
+* 데이터를 가져오기 위한 함수
+* await다음에 있는 것들은 작업이 끝날 때 까지 기다린다.
+
 <br/>
 
 > 배열이 아닌 데이터 또한 호출하기 위한 조건문
@@ -126,4 +129,14 @@ data변수에 데이터가 없다면 비어있는 div만 출력된다.
 <img src="https://user-images.githubusercontent.com/86407453/142592623-c0a8adf9-368d-4f34-ba0c-5e1a1a25b615.png"/>
 
 * componentDidMount와 같은 원리로 컴포넌트가 처음 화면에 나타날 때 call_Api함수를 호출한다.
+
+<br/>
+
+### 📊Covid
+
+>useEffect
+
+<img src="https://user-images.githubusercontent.com/86407453/142596747-e0fc4e66-15b5-47e4-a3cf-4d0c1490e368.png"/>
+
+* [filter]값이 바뀔 때 마다 CallApi함수가 호출
 
