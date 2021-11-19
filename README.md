@@ -74,6 +74,10 @@ import moment from 'moment';
 - Parking 👉🏻 class component 
 - Weather, Covid 👉🏻 function component
 
+<br/>
+
+### 🚗parking
+
 > async & await을 이용한 비동기처리
 
 <img src="https://user-images.githubusercontent.com/86407453/142582680-f4468340-3e59-4a2f-a6f1-e3ca713ad0df.png"/>
@@ -102,10 +106,24 @@ import moment from 'moment';
  <img src="https://user-images.githubusercontent.com/86407453/142585025-04c9a048-1e8a-4f8e-8251-34acf8aeb11b.png"/> 
  
 * data변수에 데이터가 있으면
-map반복문을 돌려 ParkingChart를 출력한다.
+map(반복문)을 돌려 ParkingChart를 출력한다.
 data변수에 데이터가 없다면 비어있는 div만 출력된다.
+
+<br/>
 
 > Button
 
 <img src="https://user-images.githubusercontent.com/86407453/142587389-4bed3853-2746-4993-accc-f492bb28912e.png"/>
-* onClick 이벤트를 이용해 parking에서 changeAirport함수를 받아와 버튼을 만들었다.
+
+* onClick 이벤트를 이용해 parking.js에서 changeAirport함수를 받아와 버튼을 만들었다.
+
+<br/>
+
+### ⛅Weather
+
+> useEffect
+
+<img src="https://user-images.githubusercontent.com/86407453/142592623-c0a8adf9-368d-4f34-ba0c-5e1a1a25b615.png"/>
+
+* componentDidMount와 같은 원리로 컴포넌트가 처음 화면에 나타날 때 call_Api함수를 호출한다.
+
