@@ -58,10 +58,11 @@ const Covid = () => {
         .then((response) => {
             //axios .get을 요청을 통해 가져온 응답 메세지를 담는것이 response파라미터
             // console.log(response); 
-            console.log(response.data.response.body.items);
-            if(response.data.response.items.length > 0) {   
+            // console.log(response.data.response.items.item.length);
+            if(response.data.response.items.item.length > 0) {   
+                console.log(response);
                 response = response.data.response.items.item; //보고자 하는 데이터를 끌어올림
-
+                console.log(response);
                 setBaseData(moment(response[0].createDt).format('YYYY.MM.DD H:mm A').toString());
 
                 setGroup(response.map((row) => {
