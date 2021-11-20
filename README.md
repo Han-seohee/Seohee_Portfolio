@@ -68,9 +68,75 @@ import moment from 'moment';
 ```
 
 <br/>
+
 ## 🗂️Components
 
 - Parking 👉🏻 class component 
 - Weather, Covid 👉🏻 function component
 
+<br/>
+
+### 🚗parking
+
 > async & await을 이용한 비동기처리
+
+<img src="https://user-images.githubusercontent.com/86407453/142582680-f4468340-3e59-4a2f-a6f1-e3ca713ad0df.png"/>
+
+* 데이터를 가져오기 위한 함수
+* await다음에 있는 것들은 작업이 끝날 때 까지 기다린다.
+
+<br/>
+
+> 배열이 아닌 데이터 또한 호출하기 위한 조건문
+
+<img src="https://user-images.githubusercontent.com/86407453/142582769-06dd91fc-dfda-4f77-94be-9ddf4697cfb3.png"/>
+
+<br/>
+
+>try-catch문
+
+<img src="https://user-images.githubusercontent.com/86407453/142583280-545f8cb0-406c-4622-be32-06d03de4c862.png"/>
+<img src="https://user-images.githubusercontent.com/86407453/142583300-5dc10a61-f5f6-4a50-aeaa-c216d986eedd.png"/>
+
+ try 👉🏻 실행할 코드 <br />
+
+ catch 👉🏻 예외 발생시 응답 지정 
+ 
+ <br/>
+ 
+> 삼항연산자와 반복문
+
+ <img src="https://user-images.githubusercontent.com/86407453/142585025-04c9a048-1e8a-4f8e-8251-34acf8aeb11b.png"/> 
+ 
+* data변수에 데이터가 있으면
+map(반복문)을 돌려 ParkingChart를 출력한다.
+data변수에 데이터가 없다면 비어있는 div만 출력된다.
+
+<br/>
+
+> Button
+
+<img src="https://user-images.githubusercontent.com/86407453/142587389-4bed3853-2746-4993-accc-f492bb28912e.png"/>
+
+* onClick 이벤트를 이용해 parking.js에서 changeAirport함수를 받아와 버튼을 만들었다.
+
+<br/>
+
+### ⛅Weather
+
+> useEffect
+
+<img src="https://user-images.githubusercontent.com/86407453/142592623-c0a8adf9-368d-4f34-ba0c-5e1a1a25b615.png"/>
+
+* componentDidMount와 같은 원리로 컴포넌트가 처음 화면에 나타날 때 call_Api함수를 호출한다.
+
+<br/>
+
+### 📊Covid
+
+>useEffect
+
+<img src="https://user-images.githubusercontent.com/86407453/142596747-e0fc4e66-15b5-47e4-a3cf-4d0c1490e368.png"/>
+
+* [filter]값이 바뀔 때 마다 CallApi함수가 호출
+
