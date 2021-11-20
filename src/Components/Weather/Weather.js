@@ -15,24 +15,24 @@ function Weather() {
     }, []);
 
     function call_Api() {
-        axios
-        .get("weather/data/2.5/weather",{
-        params: {
-            "appid" : key,
-            "lat" : lat,
-            "lon": lon,
-            "units" : "metric",
-            "lang" : "kr"
-        }
+        axios.defaults.baseURL = "http://ec2-52-78-205-163.ap-northeast-2.compute.amazonaws.com:3000";
+        axios.get("/weather", {
+            params: {
+                "appid" : key,
+                "lat" : lat,
+                "lon": lon,
+                "units" : "metric",
+                "lang" : "kr"
+            }
         })
         .then((response) => {
-            setData(response.data);
+            setData(response.data.response);
             setDisplay(true);
         })
         .catch((error) => {
             console.log(error);
             setDisplay(false);
-        })
+        });
     }
 
     return(

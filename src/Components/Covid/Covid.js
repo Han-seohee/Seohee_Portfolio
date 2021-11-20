@@ -19,7 +19,7 @@ const Covid = () => {
     const [group, setGroup] = useState([]); 
     // 👆🏻차트.js에서 필요한 라벨값(데이터랑 배열의 위치가 같아야함. 그룹이 여러개면 데이터도 여러개 순서,위치 동일하게 작성)
     const [data, setData] = useState([]);  
-    const [color, setColor] = useState([]); // 색상입히기
+    const [color, setColor] = useState([]);
 
     //오늘의 날짜 구하기
     const year = new Date().getFullYear();
@@ -41,10 +41,12 @@ const Covid = () => {
     }, [filter]);
 
     const CallApi = async () => { // 데이터를 가져오기 위한 함수 //async 비동기 // await 다음에 있는것들은 작업이 끝날때까지 기다림
+        axios.defaults.baseURL = "http://ec2-52-78-205-163.ap-northeast-2.compute.amazonaws.com:3000";
+
         if(filter.length > 0){
             await axios //Axios는 브라우저, Node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리이다.
         //get이 끝날때 까지 기다림
-        .get("/covid/getCovid19SidoInfStateJson", {
+        .get("/covid", {
             params : {
                 "ServiceKey" : key,
                 "pageNo" : 1,
@@ -55,12 +57,11 @@ const Covid = () => {
         })
         .then((response) => {
             //axios .get을 요청을 통해 가져온 응답 메세지를 담는것이 response파라미터
-            console.log(response); 
-            // console.log(response.data.response.body.items);
-            
-            response = response.data.response.body.items.item; //보고자 하는 데이터를 끌어올림
-        
-            if(response.length > 0) {   
+            // console.log(response); 
+            console.log(response.data.response.body.items);
+            if(response.data.response.items.length > 0) {   
+                response = response.data.response.items.item; //보고자 하는 데이터를 끌어올림
+
                 setBaseData(moment(response[0].createDt).format('YYYY.MM.DD H:mm A').toString());
 
                 setGroup(response.map((row) => {
@@ -150,7 +151,7 @@ const Covid = () => {
                 </Button>
             </div>
             <div className="chartBox">
-                <span className={'moment'}>업데이트 기준 일시 : {BaseData} </span>
+                <span>업데이트 기준 일시 : {BaseData} </span>
                 {
                     group.length > 0 && data.length > 0 && color.length > 0 ?
                     <BarChart title={title} label={group} data={data} color={color}/>

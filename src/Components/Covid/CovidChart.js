@@ -17,7 +17,10 @@ function BarChart(props) {
         plugins: {
             title: {
                 text: "코로나 현황(" + props.title + ")",
-                display: true
+                display: true,
+                font: {
+                    family: 'Aggro-Light'
+                }
             },
             legend: {
                 position: "bottom",

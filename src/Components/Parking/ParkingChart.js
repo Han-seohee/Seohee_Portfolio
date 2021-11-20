@@ -4,7 +4,7 @@ import { Pie } from "react-chartjs-2";
 class ParkingChart extends Component {
     constructor(props) {
         super(props);
-        console.log(this.props.title);
+        // console.log(this.props.title);
         this.state = {
             title: this.props.title,
             name: this.props.name,

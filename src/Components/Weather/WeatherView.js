@@ -14,16 +14,16 @@ function WeatherView(props) {
     const wind_speed = props.data.wind.speed;
 
     // 여기에서 props를 console로 출력
-    console.log(props);
-    console.log(props.data);
-    console.log(props.data.weather);
-    console.log(props.data.main);
-    console.log(props.data.main.temp);
-    console.log(props.data.main.feels_like);
-    console.log(props.data.main.pressure);
-    console.log(props.data.main.humidity);
-    console.log(props.data.wind.speed);
-    const url = `http://openweathermap.org/img/w/${weather_icon}.png`;
+    // console.log(props);
+    // console.log(props.data);
+    // console.log(props.data.weather);
+    // console.log(props.data.main);
+    // console.log(props.data.main.temp);
+    // console.log(props.data.main.feels_like);
+    // console.log(props.data.main.pressure);
+    // console.log(props.data.main.humidity);
+    // console.log(props.data.wind.speed);
+    const icon_url = `http://openweathermap.org/img/w/${weather_icon}.png`;
     // http://openweathermap.org/img/wn/${weather_icon}@2x.png
 
     return (
@@ -32,7 +32,7 @@ function WeatherView(props) {
                 <tbody>
                     <tr>
                         <td>도시이름</td>
-                        <td>{weather_name}</td>{/*??*/}
+                        <td>{weather_name}</td>
                     </tr>
                     <tr>
                         <td>현재 날씨</td>
@@ -41,8 +41,8 @@ function WeatherView(props) {
                     <tr>
                         <td>현재 날씨(아이콘)</td>
                         <td>
-                            <img src={url}/>
-                        </td>{/*??*/}
+                            <img src={icon_url}/>
+                        </td>
                     </tr>
                     <tr>
                         <td>기온</td>
